@@ -300,7 +300,7 @@ class Maze:
 if __name__ == "__main__":
     print(f'Welcome home Maze creator {time.time()}')
     margin = 10
-    m = Maze(1800, 1000, 55, margin, 5)
+    m = Maze(1800, 1000, 15, margin, 5)
     m.create_maze()
     print(
         f"(rows, cols) in the grid ({len(m.cells)}, {len(m.cells[0])}), total cells = {len(m.cells) * len(m.cells[0])}")
