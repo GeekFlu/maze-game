@@ -22,7 +22,15 @@ python3 -m pip install -U pygame --user
 
 2. Run the Game, run the next command in your terminal
 ```
- 
+~/Documents/proyectos/python/MazeGenerator> python3 -m mx.gigabyte.labs.maze.MazeGame
 ```
 
 ### Steps to manipulate the game
+
+To manipulate the game follow the next steps
+1. Click on two cells you should see two red cells
+2. Press D for selecting DFS or B for selecting BFS
+3. Press G for generating the maze 
+   - You can again select (D)FS or (B)FS
+4. Press S to solve the maze
+

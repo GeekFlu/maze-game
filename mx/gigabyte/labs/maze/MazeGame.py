@@ -123,7 +123,8 @@ class Maze:
                     # Generate Maze
                     if event.key == pygame.K_g:
                         if self.players[0] is None:
-                            self.players[0] = self.get_cell(random.randint(0, self.screen_width), random.randint(0, self.screen_height))
+                            self.players[0] = self.get_cell(random.randint(0, self.screen_width),
+                                                            random.randint(0, self.screen_height))
                         if is_algo_set is not None:
                             if is_algo_set == "BFS":
                                 self.cells = bfs.generate_maze(self.players[0])
@@ -294,7 +295,6 @@ class Maze:
         r_x = random.randint(0, len(self.cells[0]) - 1)
         r_y = random.randint(0, len(self.cells[0][0]) - 1)
         return self.cells[r_x][r_y]
-
 
 
 if __name__ == "__main__":
