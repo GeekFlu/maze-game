@@ -17,7 +17,8 @@ import pygame
 from mx.gigabyte.labs.maze.Shape import Line, Cell, Color
 from mx.gigabyte.labs.maze.solver.BFS import BFSSolver
 from mx.gigabyte.labs.maze.solver.DFS import DFSSolver
-from mx.gigabyte.labs.maze.utils import draw_line, draw_centered_square, remove_walls, get_direction, is_there_path, update_display, \
+from mx.gigabyte.labs.maze.utils import draw_line, draw_centered_square, remove_walls, get_direction, is_there_path, \
+    update_display, \
     draw_circle, \
     draw_line_between_cells, get_line
 
@@ -121,6 +122,8 @@ class Maze:
 
                     # Generate Maze
                     if event.key == pygame.K_g:
+                        if self.players[0] is None:
+                            self.players[0] = self.get_cell(random.randint(0, self.screen_width), random.randint(0, self.screen_height))
                         if is_algo_set is not None:
                             if is_algo_set == "BFS":
                                 self.cells = bfs.generate_maze(self.players[0])
@@ -140,15 +143,13 @@ class Maze:
 
                     # We use BFS for generating the maze
                     if event.key == pygame.K_b:
-                        if self.check_players_position():
-                            print(f"Generating MAZE using BFS")
-                            is_algo_set = "BFS"
+                        print(f"Generating MAZE using BFS")
+                        is_algo_set = "BFS"
 
                     # We use DFS for generating the maze
                     if event.key == pygame.K_d:
-                        if self.check_players_position():
-                            print(f"Generating MAZE using DFS")
-                            is_algo_set = "DFS"
+                        print(f"Generating MAZE using DFS")
+                        is_algo_set = "DFS"
 
                     # We repaint the grid
                     if event.key == pygame.K_p:
@@ -287,7 +288,13 @@ class Maze:
             if top_x < pos_x < down_x and top_y < pos_y < down_y:
                 return cell
             else:
-                return None
+                return self.__get_random_cell()
+
+    def __get_random_cell(self):
+        r_x = random.randint(0, len(self.cells[0]) - 1)
+        r_y = random.randint(0, len(self.cells[0][0]) - 1)
+        return self.cells[r_x][r_y]
+
 
 
 if __name__ == "__main__":
