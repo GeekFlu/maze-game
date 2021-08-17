@@ -12,17 +12,52 @@ The Game will generate and solve the maze using one of these algorithms. These m
 - We can generate the MAZE using DFS and solve it using BFS
 - We can generate the MAZE using DFS and solve it using DFS
 
+## Prerequisites
+1. [Python 3](https://www.python.org/downloads/)
+2. To verify python version run the next command in your terminal
+```commandline
+python --version
+```
+You should see something like this
+```commandline
+Python 3.8.3
+```
+
 ## The current status of the game
 Right now the current status is not yet completed, the UI is not ready, we have to press some keys to manipulate the game.
 
 1. Install [PyGame](https://www.pygame.org/wiki/GettingStarted), run the next in your terminal
 ```commandline
-python3 -m pip install -U pygame --user
+python -m pip install -U pygame --user
 ```
 
-2. Run the Game, run the next command in your terminal
+2. Run the Game, run the next command in your terminal to use default values
+```commandline
+python -m mx.gigabyte.labs.maze.MazeGame
 ```
-~/Documents/proyectos/python/MazeGenerator> python3 -m mx.gigabyte.labs.maze.MazeGame
+
+3. Run the next command to show options
+```commandline
+python -m mx.gigabyte.labs.maze.MazeGame -h
+```
+You should see something like this
+```commandline
+pygame 2.0.0 (SDL 2.0.12, python 3.8.3)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+usage: MazeGame.py [-h] [--margin MARGIN] [--screen-width SCREEN_WIDTH] [--screen-height SCREEN_HEIGHT] [--cell-size CELL_SIZE] [--delay DELAY]
+
+Maze Generator CLI Tool
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --margin MARGIN       Margin in the main window
+  --screen-width SCREEN_WIDTH
+                        The width size of the main window
+  --screen-height SCREEN_HEIGHT
+                        The width size of the main window
+  --cell-size CELL_SIZE
+                        The width size of the main window
+  --delay DELAY         Delay when painting the final route from beginning to destination
 ```
 
 ### Steps to manipulate the game
