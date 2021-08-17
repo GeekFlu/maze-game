@@ -226,9 +226,9 @@ class Maze:
         start_point_x = west_last_cell.start[0] + int(self.screen_width * space_between_surfaces)
         start_point_y = north_first_cell.start[1]
 
-        pygame.draw.rect(self.screen, Color.WHITE,
-                         pygame.Rect(start_point_x, start_point_y, self.screen_width * statistics_rect_width,
-                                     self.screen_height - 3 * self.margin), 3)
+        # pygame.draw.rect(self.screen, Color.WHITE,
+        #                  pygame.Rect(start_point_x, start_point_y, self.screen_width * statistics_rect_width,
+        #                              self.screen_height - 3 * self.margin), 3)
 
         update_display(pygame, fpsClock, FPS)
         # Setting max grid Dimension
@@ -237,7 +237,7 @@ class Maze:
 
     def create_walls(self):
         # 85% of the width and height is for the maze screen
-        maze_screen_width = self.screen_width * .80
+        maze_screen_width = self.screen_width * 1  # 0.80
 
         num_horizontal_cells = int((maze_screen_width - 2 * self.margin) / self.cell_size)
         num_vertical_cells = int((self.screen_height - 2 * self.margin) / self.cell_size)
@@ -300,11 +300,11 @@ class Maze:
 if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser(description='Maze Generator CLI Tool')
     arg_parser.add_argument('--margin', type=int, help='Margin in the main window', default=10)
-    arg_parser.add_argument('--screen-width', type=int, help='The width size of the main window', default=900)
-    arg_parser.add_argument('--screen-height', type=int, help='The width size of the main window', default=600)
-    arg_parser.add_argument('--cell-size', type=int, help='The width size of the main window', default=15)
+    arg_parser.add_argument('--screen-width', type=int, help='The width size of the main window', default=1000)
+    arg_parser.add_argument('--screen-height', type=int, help='The width size of the main window', default=900)
+    arg_parser.add_argument('--cell-size', type=int, help='The width size of the main window', default=30)
     arg_parser.add_argument('--delay', type=int,
-                            help='Delay when painting the final route from beginning to destination', default=5)
+                            help='Delay when painting the final route from beginning to destination', default=500)
 
     args = arg_parser.parse_args()
     print(f'Welcome home Maze creator {time.time()}')

@@ -60,6 +60,18 @@ optional arguments:
   --delay DELAY         Delay when painting the final route from beginning to destination
 ```
 
+### Using custom arguments
+To pass arguments to the program use the next command
+```commandline
+python -m mx.gigabyte.labs.maze.MazeGame --margin=5 --screen-width=1200 --screen-height=900 --cell-size=10 --delay=2
+```
+this command will generate a game window with the next characteristics
+- Screen width size of 1200
+- Screen height size of 900
+- Margin of 5
+- Cell size of 10 pixels per side
+- Delay of 2 ms when solving the maze and draw the final route
+
 ### Steps to manipulate the game
 
 To manipulate the game follow the next steps
