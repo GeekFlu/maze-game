@@ -12,6 +12,20 @@ The Game will generate and solve the maze using one of these algorithms. These m
 - We can generate the MAZE using DFS and solve it using BFS
 - We can generate the MAZE using DFS and solve it using DFS
 
+## These are the sources I used to understand the algorithms
+- The coding train [YouTube channel](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw), series on Maze Generating
+  - [Maze generator part 1](https://www.youtube.com/watch?v=HyK_Q5rrcr4)
+  - [Maze generator part 2](https://www.youtube.com/watch?v=D8UgRyRnvXU)
+  - [Maze generator part 3](https://www.youtube.com/watch?v=8Ju_uxJ9v44)
+  - [Maze generator part 4](https://www.youtube.com/watch?v=_p5IH0L63wo)
+
+- Back to Back SWE [YouTube Channel](https://www.youtube.com/channel/UCmJz2DV1a3yfgrR7GqRtUUA)
+  - [DFS & BFS Graph Search Algorithms](https://www.youtube.com/watch?v=TIbUeeksXcI&t=424s) 
+  - [Search A maze for any path](https://www.youtube.com/watch?v=W9F8fDQj7Ok&t=901s)
+
+- Abdul Bari [YouTube Channel](https://www.youtube.com/channel/UCZCFT11CWBi3MHNlGf019nw)
+  - [Graph Traversals - BFS & DFS -Breadth First Search and Depth First Search](https://www.youtube.com/watch?v=pcKY4hjDrxk)
+
 ## Prerequisites
 1. [Python 3](https://www.python.org/downloads/)
 2. To verify python version run the next command in your terminal
