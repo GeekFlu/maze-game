@@ -6,7 +6,7 @@ Luis Enrique Gonzalez
 Sunnyvale CA
 Noviembre 6, 2020
 """
-
+import argparse
 import os
 import random
 import time
@@ -298,9 +298,17 @@ class Maze:
 
 
 if __name__ == "__main__":
+    arg_parser = argparse.ArgumentParser(description='Maze Generator CLI Tool')
+    arg_parser.add_argument('--margin', type=int, help='Margin in the main window', default=10)
+    arg_parser.add_argument('--screen-width', type=int, help='The width size of the main window', default=900)
+    arg_parser.add_argument('--screen-height', type=int, help='The width size of the main window', default=600)
+    arg_parser.add_argument('--cell-size', type=int, help='The width size of the main window', default=15)
+    arg_parser.add_argument('--delay', type=int,
+                            help='Delay when painting the final route from beginning to destination', default=5)
+
+    args = arg_parser.parse_args()
     print(f'Welcome home Maze creator {time.time()}')
-    margin = 10
-    m = Maze(1800, 1000, 15, margin, 5)
+    m = Maze(args.screen_width, args.screen_height, args.cell_size, args.margin, args.delay)
     m.create_maze()
     print(
         f"(rows, cols) in the grid ({len(m.cells)}, {len(m.cells[0])}), total cells = {len(m.cells) * len(m.cells[0])}")
